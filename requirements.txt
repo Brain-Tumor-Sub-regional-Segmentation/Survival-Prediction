@@ -1,0 +1,9 @@
+nibabel==5.1.0
+numpy==1.26.1
+pandas==2.1.2
+scikit-image==0.22.0
+scipy==1.11.3
+tensorboard==2.15.1
+tensorboardX==2.6.2.2
+torch==2.1.0
+torchvision==0.16.0
