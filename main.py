@@ -256,7 +256,8 @@ def validate_model(model, data, writer, device, batch_size, n_labels):
     # Calculate average validation loss and accuracy
     avg_val_loss = val_loss_accum / val_steps
     avg_val_accuracy = val_accuracy_accum / val_steps
-
+    
+    print(f'val_loss {avg_val_loss:.4f}, val_accuracy {avg_val_accuracy:.4f}')
     # Log validation results
     writer.add_scalar('validation_loss', avg_val_loss, model.global_step)
     writer.add_scalar('validation_accuracy', avg_val_accuracy, model.global_step)
@@ -295,7 +296,8 @@ def log_epoch_summary(writer, metrics_epoch, global_step):
         h += metrics['entropy']
 
     num_steps = len(metrics_epoch)
-
+    
+    print(f'loss {(total_loss / num_steps):.4f}, accuracy {(accuracy / num_steps):.4f}')
     # Calculate averages and log them
     writer.add_scalar('epoch_loss/average_total', total_loss / num_steps, global_step)
     writer.add_scalar('epoch_loss/average_bce_l', bce_l / num_steps, global_step)
